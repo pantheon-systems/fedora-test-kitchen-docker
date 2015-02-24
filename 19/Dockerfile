@@ -3,7 +3,7 @@ FROM mattdm/fedora-small:f19
 MAINTAINER infrastructure@pantheon.io
 ENV container docker
 # Chef
-RUN yum -y install gawk
+RUN yum -y install gawk hostname
 ADD https://www.opscode.com/chef/install.sh /install.sh
 RUN bash /install.sh
 # Packages
