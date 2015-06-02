@@ -3,7 +3,7 @@
 
 image_base_name="quay.io/getpantheon/fedora-test-kitchen"
 
-for i in 19 20; do
+for i in 19 20 22; do
     full_image_name="${image_base_name}:${i}"
 
     echo "==> Building $dockerfile ($full_image_name)"
