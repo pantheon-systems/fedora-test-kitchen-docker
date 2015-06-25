@@ -6,7 +6,7 @@ ENV container docker
 ADD https://www.opscode.com/chef/install.sh /install.sh
 RUN bash /install.sh
 # Packages
-RUN dnf -y install systemd systemd-libs sudo openssh-server openssh-clients curl
+RUN dnf -y install systemd systemd-libs sudo openssh-server openssh-clients curl dnf-plugins-core
 # Update everything, purge systemd services.
 RUN dnf -y update; dnf clean all; \
 (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
